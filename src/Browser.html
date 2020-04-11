@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Browser</title>
+    <link rel="stylesheet" href="css/Main.css">
+    <link rel="stylesheet" href="css/Browser.css">
+
+</head>
+<body>
+<div style="top: 0">
+    <div style="top: 0">
+        <ul class="nav">
+            <img src="../images/logo.jpg" width="31.2" height="31.2" alt="...">
+            <li><a href="Home.html">Home</a></li>
+            <li><a href="Browser.html" style="color: black;background-color: gray">Browser</a></li>
+            <li><a href="Search.html">Search</a></li>
+        </ul>
+    </div>
+    <div class="dropdown">
+        <button class="dropButton">▼  My Account</button>
+        <div class="dropdown-content">
+            <a href="Upload.html"><img src="../images/Upload.jpg" width="30" height="30" alt="...">Upload</a>
+            <a href="My_Photo.html"><img src="../images/My_Photo.png" width="30" height="30" alt="...">My Photo</a>
+            <a href="My_Favourite.html"><img src="../images/Favor.jpg" width="30" height="30" alt="...">My Favourite</a>
+            <a href="../index.html"><img src="../images/Log_in.png" width="30" height="30" alt="...">Log in</a>
+        </div>
+    </div>
+</div>
+    <div class="sidebar" >
+        <br>
+
+        <p>
+            <br>
+            <label>
+                <input placeholder="Search by title">
+            </label>
+            <img src="../images/search.png" onclick="alert('已搜索')" style="width: 30px;height:30px" alt="...">
+        </p>
+
+        <table style="margin-top: 20px">
+            <thead>
+            <tr>
+                <th onclick="alert('Hot content')">Hot content</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td onclick="alert('Scenery')" style="border-top-left-radius: 5px;border-top-right-radius: 5px;">Scenery</td>
+            </tr>
+            <tr>
+                <td onclick="alert('City')">City</td>
+            </tr>
+            <tr>
+                <td onclick="alert('People')">People</td>
+            </tr>
+            <tr>
+                <td onclick="alert('Animal')">Animal</td>
+            </tr>
+            <tr>
+                <td onclick="alert('Building')">Building</td>
+            </tr>
+            <tr style="border-bottom-left-radius: 5px;border-bottom-right-radius: 5px;">
+                <td onclick="alert('Wonder')">Wonder</td>
+            </tr>
+            </tbody>
+
+        </table>
+        <table style="margin-top: 20px; ">
+            <thead>
+            <tr style="border-top-left-radius: 5px;border-top-right-radius: 5px;">
+                <th onclick="alert('Hot country')">Hot Country</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td onclick="alert('China')">China</td>
+            </tr>
+            <tr>
+                <td onclick="alert('Italy')">Italy</td>
+            </tr>
+            <tr>
+                <td onclick="alert('Japan')">Japan</td>
+            </tr>
+            <tr style="border-bottom-left-radius: 5px;border-bottom-right-radius: 5px;">
+                <td onclick="alert('America')">America</td>
+            </tr>
+            </tbody>
+
+        </table>
+        <table style="margin-top: 20px; ">
+            <thead>
+            <tr style="border-top-left-radius: 5px;border-top-right-radius: 5px;">
+                <th onclick="alert('Hot city')">Hot City</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td onclick="alert('Shanghai')">Shanghai</td>
+            </tr>
+            <tr>
+                <td onclick="alert('Beijing')">Beijing</td>
+            </tr>
+            <tr>
+                <td onclick="alert('Tokyo')">Tokoyo</td>
+            </tr>
+            <tr style="border-bottom-left-radius: 5px;border-bottom-right-radius: 5px;">
+                <td onclick="alert('Los Angeles')">Los Angeles</td>
+            </tr>
+            </tbody>
+
+        </table>
+
+    </div>
+<br>
+    <div style="width: 70%;float: none" class="main">
+        <div class="filter">
+            <p>Filter</p>
+            <label for="first"></label>
+            <select id="first" onChange="change()">
+                <option selected="selected">Filter:Country</option>
+                <option>China</option>
+                <option>Japan</option>
+                <option>Italy</option>
+                <option>America</option>
+            </select>
+
+            <label for="second"></label>
+            <select id="second">
+                <option selected>Filter:City</option>
+            </select>
+            <label></label>
+            <select>
+                <option selected>Filter:Subject</option>
+                <option>Scenery</option>
+                <option>Buildings</option>
+                <option>Wonder</option>
+            </select>
+            <button onclick="alert('已更新')">Filter</button>
+
+            <script>
+                function change()
+                {
+                    const x = document.getElementById("first");
+                    const y = document.getElementById("second");
+                    y.options.length = 0; // 清除second下拉框的所有内容
+                    if(x.selectedIndex === 0)
+                    {
+                        y.options.add(new Option("Filter:City", "0"));
+                    }
+                    if(x.selectedIndex === 1)
+                    {
+                        y.options.add(new Option("Shanghai", "0"));
+                        y.options.add(new Option("Kunming", "1"));
+                        y.options.add(new Option("Beijing", "2"));
+                        y.options.add(new Option("Yantai", "3"));
+                    }
+
+                    if(x.selectedIndex === 2)
+                    {
+                        y.options.add(new Option("Tokyo", "0"));
+                        y.options.add(new Option("Osaka", "1"));
+                        y.options.add(new Option("Kamakura", "2"));
+                    }
+                    if(x.selectedIndex === 3)
+                    {
+                        y.options.add(new Option("Roman", "0"));
+                        y.options.add(new Option("Milan", "1"));
+                        y.options.add(new Option("Venice", "2"));
+                        y.options.add(new Option("Florance", "3"));
+                    }
+                    if(x.selectedIndex === 4)
+                    {
+                        y.options.add(new Option("New York", "0"));
+                        y.options.add(new Option("San Francisco", "1"));
+                        y.options.add(new Option("Washington", "2"));
+                    }
+
+                }
+            </script>
+        </div>
+        <div class="gallery">
+            <figure>
+                <a href="Details.html"><img src="../images/Browser/1.jpg" alt="Carpet Grass" width="280" height="280"></a>
+            </figure>
+            <figure>
+                <a href="Details.html"><img src="../images/Browser/2.jpg" alt="Bentgrass" width="280" height="280"></a>
+            </figure>
+            <figure>
+                <a href="Details.html"><img src="../images/Browser/3.jpg" alt="Bluegrass" width="280" height="280"></a>
+            </figure>
+            <figure>
+                <a href="Details.html"><img src="../images/Browser/4.jpg" alt="Leaves" width="280" height="280"></a>
+            </figure>
+            <figure>
+                <a href="Details.html"> <img src="../images/Browser/5.jpg" alt="Pattern Grass" width="280" height="280"></a>
+            </figure>
+            <figure>
+                <a href="Details.html"><img src="../images/Browser/6.jpg" alt="Dandelion" width="280" height="280"></a>
+            </figure>
+            <figure>
+                <a href="Details.html"><img src="../images/Browser/7.jpg" alt="Dandelion" width="280" height="280"></a>
+            </figure>
+            <figure>
+                <a href="Details.html"><img src="../images/Browser/8.jpg" alt="Dandelion" width="280" height="280"></a>
+            </figure>
+            <figure>
+                <a href="Details.html"><img src="../images/Browser/9.jpg" alt="Dandelion" width="280" height="280"></a>
+            </figure>
+            <figure>
+                <a href="Details.html"><img src="../images/Browser/10.jpg" alt="Dandelion" width="280" height="280"></a>
+            </figure>
+            <figure>
+                <a href="Details.html"><img src="../images/Browser/11.jpg" alt="Dandelion" width="280" height="280"></a>
+            </figure>
+            <figure>
+                <a href="Details.html"><img src="../images/Browser/12.jpg" alt="Dandelion" width="280" height="280"></a>
+            </figure>
+        </div>
+        <div style="margin-left: 40%; background-color: white">
+            <span class="first_page" onclick="alert('第1页')"><< </span><span class="page" onclick="alert('第1页')">1 </span><span class="page" onclick="alert('第2页')">2 </span><span class="page" onclick="alert('第3页')">3 </span><span class="page" onclick="alert('第4页')">4 </span><span class="page" onclick="alert('第5页')">5 </span><span class="page" onclick="alert('第6页')">6 </span><span class="page" onclick="alert('第7页')">7 </span><span class="page" onclick="alert('第8页')">8 </span><span class="page" onclick="alert('第9页')">9 </span><span class="last_page" onclick="alert('第9页')"> >></span>
+        </div>
+    </div>
+    <footer style="width: 100%">
+        <p>@肥仔阿亮</p>
+        <p>Email:19302010061@fudan.edu.cn</p>
+        <p>Tel:15901984704</p>
+    </footer>
+
+</body>
+</html>

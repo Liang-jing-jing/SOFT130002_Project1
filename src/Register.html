@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Register</title>
+    <link rel="stylesheet" href="css/Main.css">
+    <link rel="stylesheet" href="css/Register.css">
+</head>
+<body>
+    <div class="register">
+        <h1>Register</h1>
+        <form>
+            <p><label><span class="label">User name:</span><input type="text" name="name" required/></label></p>
+            <P><span class="label">Password:</span> <label for="pw1"></label><input type="password" name="pw" id="pw1" required/></P>
+            <p><span class="label">Confirm Password:</span> <label for="pw2"></label><input type="password" name="pw" id="pw2" onkeyup="validate()" required/><span id="note"></span></p>
+            <p><button type="submit" id="submit" value="submit" onclick="location.href='index.html';alert('registered')">Registered</button><br>
+                <input type="reset" value="Resume" class="button"/></p>
+        </form>
+        <script>
+            function validate() {
+                const pw1 = document.getElementById("pw1").value;
+                const pw2 = document.getElementById("pw2").value;
+                if(pw1 === pw2) {
+                    document.getElementById("note").innerHTML="<font color='green'></font>";
+                    document.getElementById("submit").disabled = false;
+                }
+                else {
+                    document.getElementById("note").innerHTML="<font color='red'>*</font>";
+                    document.getElementById("submit").disabled = true;
+                }
+            }
+        </script>
+    </div>
+
+    <footer id="footer">
+        <p>@肥仔阿亮</p>
+        <p>Email:19302010061@fudan.edu.cn</p>
+        <p>Tel:15901984704</p>
+    </footer>
+</body>
+</html>
